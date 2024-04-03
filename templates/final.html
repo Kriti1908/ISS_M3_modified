@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href=> -->
+    <link rel="stylesheet" href="../static/final.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap" rel="stylesheet">
+    <!-- <script src="final.js" defer></script> -->
+    <script src="../static/final.js" defer></script>
+
+
+    <style>
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.6); 
+            z-index: 1000;
+            padding: 10px 0; 
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav li {
+            display: inline;
+            margin: 0 1.3
+            rem; 
+        }
+
+        nav a {
+            color: white; 
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-family: 'Poppins', sans-serif; 
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="/landing">Go to landing page</a></li>
+        </ul>
+    </nav>
+    <section>
+    <div class="video-background" style="height: 65vh;">
+        <video autoplay muted loop id="video-bg">
+            <source src="../static/nature.webm" type="video/mp4">
+        </video>
+        <div class="content">
+            <p><b>Where creativity meets innovation</b></p>
+        </div>
+        <div class="block"></div>
+    </div>
+    <div class="imgs">
+        <img src="../static/doggy-02.jpeg" data-img id="img-1" class="top-section-img show doggy-img " />
+        <img src="../static/bw-02.jpeg" data-img id="img-2" class="top-section-img show bw-img" />
+        <img src="../static/ny-01.jpeg" data-img id="img-3" class="top-section-img show ny-img" />
+    </div>
+    
+</section>
+    <div class="top-section full-screen-section">
+        <div class="left">
+            <h1>Capture Craft</h1>
+            <p>
+                <img src="../static/icons8-quote-48.png" width="50px"><br>
+                <p class="head_textt">Capturing the moments of today that will <i>wow</i> your hearts tomorrow.</p>
+            </p>
+        </div>
+        <div class="right"></div>
+    </div>
+    <section class="full-screen-section first-main-section">
+        <h1>Easier. Faster. Better.</h1>
+        <p>Bring Your Photos to Life with Our Editing Magic.</p>
+        <div data-img-to-show="#img-1"></div>
+    </section>
+    <section class="full-screen-section">
+        <h1>Enhance. Personalize. Amaze.</h1>
+        <p>Create Stunning Visuals with Intuitive Editing Tools. Personalize Your Photos with Custom Editing Effects.</p>
+        <div data-img-to-show="#img-2"></div>
+    </section>
+    <section class="full-screen-section">
+        <h1>Sync. Edit. Mesmerize.</h1>
+        <p>Create Your Audio-Visual Fusion: Crafting Stories That Resonate.</p>
+        <div data-img-to-show="#img-3"></div>
+    </section>
+</body>
+</html>

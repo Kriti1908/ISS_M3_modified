@@ -1,0 +1,172 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    position: relative; 
+}
+
+.video-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    z-index: 1; 
+}
+
+#video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0; 
+}
+
+.content {
+    z-index: 2; 
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+.block{
+    background-color: rgba(53, 48, 48, 0.3);
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: #141616;
+  background-color: #F8F0E5;
+  font-size: 28px;
+}
+
+h1 {
+  font-size: 110px;
+  margin-bottom: 1rem;
+}
+
+.full-screen-section {
+  height: 100vh;
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+}
+
+.top-section .left,
+.top-section .right {
+  flex-basis: 0;
+  flex-grow: 1;
+  padding: 1rem;
+  padding-left: 3rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.top-section {
+  display: flex;
+  text-align: start;
+  padding: 0;
+}
+
+.top-section .left {
+  background-color: rgb(245,235,235, var(--background-opacity));
+}
+
+.top-section .right {
+  background: linear-gradient(
+    210.65deg,
+    rgb(222,208,182, var(--background-opacity)) 0%,
+    rgb(228,208,208, var(--background-opacity)) 100%
+  );
+}
+
+.imgs > .top-section-img {
+  --value: min(var(--scroll), 10) * 50 / 10;
+  width: calc(50vw + 1vw * var(--value));
+  transform: translateY(calc(50% - 1% * var(--value)));
+  animation-delay: 1s;
+}
+
+@media (width <= 1000px) {
+  .top-section .right {
+    display: none;
+  }
+
+  .top-section .left {
+    text-align: center;
+  }
+
+  body {
+    font-size: 24px;
+  }
+
+  h1 {
+    font-size: 72px;
+  }
+
+  .imgs > .top-section-img {
+    width: 100vw;
+  }
+}
+
+:root {
+  --scroll: 0;
+}
+
+.top-section {
+  position: sticky;
+  top: 0;
+  translate: 0 calc(-1% * (max(var(--scroll), 25) - 25) * 100 / 75);
+  --background-opacity: calc(100% - 1% * min(var(--scroll), 30) * 100 / 30);
+}
+
+.first-main-section {
+    font-family: 'Poppins', sans-serif;
+  padding-top: 10vh;
+  transition: opacity 1s ease;
+  display: none; 
+}
+
+.imgs > * {
+  position: fixed;
+  width: 100vw;
+  bottom: 0;
+  z-index: 10;
+  translate: 0 100%;
+  transition: translate 1s ease-in-out;
+  display: none; 
+}
+
+.imgs > .show {
+  translate: 0 0;
+}
+
+[data-img-to-show] {
+  position: absolute;
+  top: 20%;
+}
+
+  
+.full-screen-section{
+    font-family: 'Poppins', sans-serif;
+}
+
+.head_textt {
+    padding-left: 10%;
+}

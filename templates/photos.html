@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Photo</title>
+        <link rel="stylesheet" href="{{url_for('static',filename='photos.css')}}">
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    </head>
+    <body>
+        <div class="navbar">
+            <a href="#">Home</a>
+        </div>
+        <div class="drop_box">
+            <div class="drop_box_box">
+                <div class="drop_box_head">
+                    <h1>Upload Files</h1>
+                    <p>Upload files you want to share with your team members.</p>
+                    <p>PDF, Images & Videos are allowed.</p>
+                </div>
+                <div class="drop_box_body">
+                    <div class="drop-section">
+                        <div class="col">                        
+                            <img src="../static/11738385 (1).jpg" alt="cloud"><br>
+                            <span>Drag & Drop your files here.</span>
+                            <span>OR</span>
+                            <button class="file-selector">Browse Files</button><br>
+                            <input type="file" class="file-selector-input" multiple>
+                        </div>
+                        <div class="col">
+                            <div class="drop-here">Drop Here</div>
+                        </div>
+                    </div>
+                    <div class="list-section">
+                        <div class="list-title">Uploaded Files</div>
+                        <div class="list"></div>
+                    </div>
+                </div>    
+            </div>
+        </div>
+        <div class="video-btn">
+            <button class="vid_btn" id="upload_btn" method="POST">Upload Pictures</button>
+            <button class="vid_btn" id="vid_btn">Go to Video</button>
+        </div>
+    <script src="{{url_for('static',filename='photos.js')}}"></script>
+    
+    </body>
+</html>

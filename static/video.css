@@ -1,0 +1,630 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+body
+{
+    display: flex;
+    flex-direction: column;
+    background-color:#313131;
+    background-color:#313131;
+    background-image: url(bg1.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    margin: 0;
+    padding: 0;
+}
+
+.material-symbols-outlined
+{
+    color: white;
+}
+
+.navbar :any-link
+{
+    margin: 0;
+    font-size: larger;
+    margin-right: 5%;
+    border: 1px transparent solid white;
+    color: white;
+    text-decoration: none;
+    background-color: rgba(43, 43, 43, 0.1);
+    padding: 1%;
+    transition: 0.4s;
+}
+
+.navbar :any-link:hover
+{
+    background-color: rgba(43, 43, 43, 0.3);
+    transition: 0.4s;
+}
+
+.navbar
+{
+    flex: 1 0 100%;
+    
+    display: block;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(43, 43, 43, 0.2);
+    color: white;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    text-align: right;
+}
+
+.main_body
+{
+    flex: 1 0 75%;
+    display: flex;
+    flex-direction: row;
+}
+
+.side_nav
+{
+    flex: 1 0 5%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(43, 43, 43, 0.0);
+    text-align: center;
+    align-items: center;
+    padding-top: 15%;
+    max-height: 35rem;
+}
+
+.non_side
+{
+    flex: 1 0 95%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+.side_nav button
+{
+    flex: 0 1 50%;
+    flex-shrink: 1;
+    background-color: rgba(43, 43, 43, 0.5);
+    transition: 0.4s;
+    border: none;
+    border-radius: 10px;
+    padding: 1%;
+    padding-left: 8%;
+    padding-right: 8%;
+    margin-bottom: 20%;
+    font-size: large;
+    max-height: 50%;
+    width: 110%;
+}
+.side_nav button:hover
+{
+    background-color: rgba(43, 43, 43, 0.9);
+    transition: 0.4s;
+}
+
+.content
+{
+    flex: 1 0 45%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    padding-top: 6%;
+    padding-bottom: 4%;
+}
+
+.video_preview
+{
+    flex: 1 0 65%;
+    background-color: rgba(99, 99, 99, 0);
+    color: #fff;
+    max-height: 100%;
+    width: auto;
+    margin-left: 1%;
+    border-radius: 10px;
+    margin-right: 10%;
+    margin-left: 10%;;
+    padding-left: 5%;
+    
+  
+    padding-bottom: 2%;
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+.container, .video-controls, .video-timer, .options{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container{
+  
+  width: 90%;
+  user-select: none;
+  overflow: hidden;
+  max-width: 90%;
+  height: auto;
+  border-radius: 5px;
+  background: #000;
+  aspect-ratio: 16 / 9;
+  position: relative;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+.container.fullscreen{
+  max-width: 100%;
+  width: 100%;
+  height: 100vh;
+  border-radius: 0px;
+}
+.wrapper{
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  opacity: 0;
+  bottom: -5%;
+  transition: all 0.08s ease;
+}
+.container.show-controls .wrapper{
+  opacity: 1;
+  bottom: 0;
+  transition: all 0.13s ease;
+}
+.wrapper::before{
+  content: "";
+  bottom: 0;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: calc(100% + 35px);
+  pointer-events: none;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+.video-timeline{
+  height: 7px;
+  width: 100%;
+  cursor: pointer;
+}
+.video-timeline .progress-area{
+  height: 3px;
+  position: relative;
+  background: rgba(255, 255, 255, 0.6);
+}
+.progress-area span{
+  position: absolute;
+  left: 50%;
+  top: -25px;
+  font-size: 13px;
+  color: #fff;
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+.progress-area .progress-bar{
+  width: 0%;
+  height: 100%;
+  position: relative;
+  background: #2289ff;
+}
+.progress-bar::before{
+  content: "";
+  right: 0;
+  top: 50%;
+  height: 13px;
+  width: 13px;
+  position: absolute;
+  border-radius: 50%;
+  background: #2289ff;
+  transform: translateY(-50%);
+}
+.progress-bar::before, .progress-area span{
+  display: none;
+}
+.video-timeline:hover .progress-bar::before,
+.video-timeline:hover .progress-area span{
+  display: block;
+}
+.wrapper .video-controls{
+  padding: 5px 20px 10px;
+}
+.video-controls .options{
+  width: 100%;
+}
+.video-controls .options:first-child{
+  justify-content: flex-start;
+}
+.video-controls .options:last-child{
+  justify-content: flex-end;
+}
+.options button{
+  height: 40px;
+  width: 40px;
+  font-size: 19px;
+  border: none;
+  cursor: pointer;
+  background: none;
+  color: #efefef;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+.options button :where(i, span) {
+  height: 100%;
+  width: 100%;
+  line-height: 40px;
+}
+.options button:hover :where(i, span){
+  color: #fff;
+}
+.options button:active :where(i, span){
+  transform: scale(0.9);
+}
+.options button span{
+  font-size: 23px;
+}
+.options input{
+  height: 4px;
+  margin-left: 3px;
+  max-width: 75px;
+  accent-color: #0078FF;
+}
+.options .video-timer{
+  color: #efefef;
+  margin-left: 15px;
+  font-size: 14px;
+}
+.video-timer .separator{
+  margin: 0 5px;
+  font-size: 16px;
+  font-family: "Open sans";
+}
+.playback-content{
+  display: flex;
+  position: relative;
+}
+.playback-content .speed-options{
+  position: absolute;
+  list-style: none;
+  left: -40px;
+  bottom: 40px;
+  width: 95px;
+  overflow: hidden;
+  opacity: 0;
+  border-radius: 4px;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.13s ease;
+}
+.playback-content .speed-options.show{
+  opacity: 1;
+  pointer-events: auto;
+}
+.speed-options li{
+  cursor: pointer;
+  color: #000;
+  font-size: 14px;
+  margin: 2px 0;
+  padding: 5px 0 5px 15px;
+  transition: all 0.1s ease;
+}
+.speed-options li:where(:first-child, :last-child){
+  margin: 0px;
+}
+.speed-options li:hover{
+  background: #dfdfdf;
+}
+.speed-options li.active{
+  color: #fff;
+  background: #3e97fd;
+}
+.container video{
+  width:100%;
+}
+
+@media screen and (max-width: 540px) {
+  .wrapper .video-controls{
+    padding: 3px 10px 7px;
+  }
+  .options input, .progress-area span{
+    display: none!important;
+  }
+  .options button{
+    height: 30px;
+    width: 30px;
+    font-size: 17px;
+  }
+  .options .video-timer{
+    margin-left: 5px;
+  }
+  .video-timer .separator{
+    font-size: 14px;
+    margin: 0 2px;
+  }
+  .options button :where(i, span) {
+    line-height: 30px;
+  }
+  .options button span{
+    font-size: 21px;
+  }
+  .options .video-timer, .progress-area span, .speed-options li{
+    font-size: 12px;
+  }
+  .playback-content .speed-options{
+    width: 75px;
+    left: -30px;
+    bottom: 30px;
+  }
+  .speed-options li{
+    margin: 1px 0;
+    padding: 3px 0 3px 10px;
+  }
+  .right .pic-in-pic{
+    display: none;
+  }
+}
+
+.editor
+{   
+    flex: 1 0 25%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    background-color: rgba(92,92,92, 0.5);
+    color: #fff;
+    margin-top: 0%;
+    border-radius: 10px;
+    max-width: 95%;
+    padding-left: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 2%;
+    align-items: flex-start;
+    align-content: flex-start;
+    min-height: 50%;
+    max-height: fit-content;
+    margin:auto;
+    margin-bottom: 5%;
+}
+
+.edit-box
+{
+  flex: 1 0 10%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(92, 92, 92, 0.7);
+  color: #fff;
+  border: 1px solid #b6b3b3;
+  border-radius: 10px;
+  /* max-width: 10%; */
+  padding: 0%;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  height: 12.5rem;
+  overflow: hidden;
+}
+.edit-box:hover{
+  transform: scale(1.1); 
+  filter: brightness(1.2); 
+  cursor: pointer;
+
+}
+
+.img_container {
+  flex: 1 0 80%;
+  background-color: aquamarine;
+  max-width: 20rem;
+  margin: 0;
+  position: relative;
+  overflow: hidden; /* Add this to hide any overflow */
+}
+.editor_text{
+  background-color:rgba(92, 92, 92, 0.7);
+  flex: 1 0 25%;
+  padding: 2%;
+  overflow: hidden;
+}
+
+.thumbnail {
+  transition: transform 0.3s ease, filter 0.3s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Fit the entire image inside the container */
+  object-position: center; /* Center the image horizontally and vertically */
+}
+
+/* .thumbnail:hover {
+  transform: scale(1.5); 
+  filter: brightness(1.2); 
+  cursor: pointer;
+} */
+
+.filename {
+  max-width: 100%; 
+  font-size: small;
+  overflow-wrap: break-word;
+  word-wrap: break-word; 
+  word-break: break-all;
+  text-align: center;
+  padding: 5px;
+  color: #fff;
+  margin: 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(142, 180, 138, 0.4); 
+  display: none; 
+}
+
+.selected .filename {
+  color: rgba(0, 0, 0, 1); /* Change to the desired color */
+}
+
+.selected {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.1); 
+}
+.selected {
+  filter: brightness(1.5);
+}
+
+.edit-box.selected .overlay {
+  display: block; 
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border: none;
+  background: none;
+  cursor: pointer;
+
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 300%;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 0.1rem;
+  position: absolute;
+  z-index: 1;
+  bottom: 20%;
+  left: 210%;
+  margin-left: -40px;
+  transition: visibility 0.2s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+
+.butsave{
+  background-color: rgba(92, 92, 92, 0.7);
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  padding: 1%;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  height: 35%;
+  overflow: hidden;
+
+}
+
+.saveButton :hover{
+  cursor: pointer;
+  transform: scale(1.2); 
+
+}
+
+.search-container {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  text-align: center;
+}
+
+#search-bar {
+  padding: 0.5rem;
+  width: 60%;
+  border-radius: 5px;
+  background-color: rgba(92, 92, 92, 0.7);
+  color: #fff;
+  border: 1px solid #919191;
+  margin-right: 1%;
+}
+
+#search-bar:focus {
+  outline: none;
+  border-color: #fff;
+  color: #fff;
+}
+
+.search-container button {
+  padding: 0.5rem 1rem;
+  background-color: rgba(92, 92, 92, 0.7);
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-container button:hover {
+  background-color: #4b5968;
+}
+
+/* Style for the search results container */
+/* Style for the search results container */
+/* Style for the search results container */
+.search-results {
+  width: 60%;
+  margin-top: 0.1rem;
+  margin-bottom: 1rem;
+  margin-left: 17.5%;
+  padding: 1rem;
+  color: #fff;
+  background-color: rgba(128, 128, 128, 0.5);
+  color: #000;
+  border-radius: 5px;
+  border: 1px solid #ccc; /* Add border */
+  max-height: 200px; /* Add max height to enable scrolling if necessary */
+  overflow-y: auto; /* Enable vertical scrolling if necessary */
+}
+
+/* Style for each search result item */
+.search-result-item {
+  margin-bottom: 0.5rem;
+}
+
+.img_container.scaled {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+
+/* Style for the "Filename not found" message */
+.not-found-filename {
+  background-color: lightcoral;
+}
+
+/* Style for the "No images found" message */
+.no-images-found {
+  color: #ffffff;
+}
+
+
+.matched-filename {
+  background-color: lightgreen;
+}
+
+/* Style for the not found filename */
+.not-found-filename {
+  background-color: lightcoral;
+}
+
+.search{
+  background-color: rgba(92, 92, 92, 0.7);
+  color: #fff;
+}
+
+#search-bar::placeholder {
+  color: #ffffff; /* Change placeholder color to gray */
+}
+
+.search::placeholder {
+  color: #ffffff; /* Change placeholder color to gray */
+}

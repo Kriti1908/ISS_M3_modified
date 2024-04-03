@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+body
+{
+    display: flex;
+    flex-direction: column;
+    background-color:#313131;
+    background-image: url(bg1.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    align-content: center;
+}
+
+.material-symbols-outlined
+{
+    color: white;
+}
+
+.navbar :any-link
+{
+    margin: 0;
+    font-size: larger;
+    margin-right: 5%;
+    border: 1px transparent solid white;
+    color: white;
+    text-decoration: none;
+    
+    padding: 1%;
+    transition: 0.4s;
+}
+
+.navbar :any-link:hover
+{
+    background-color: rgba(52,52,52,0.3);
+    transition: 0.4s;
+}
+
+.navbar
+{
+    flex: 1 0 100%;
+    display: block;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(66, 66, 66, 0.2);
+    color: white;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    text-align: right;
+}
+
+.drop_box
+{
+    flex: 1 0 30%;
+    background-color: rgba(31,31,31,0.3);
+    color: #fff;
+    margin-top: 5%;
+    max-width: 30%;
+    height: auto;
+    text-align: center;
+    margin-bottom: 3%;
+    border-radius: 10px;
+}
+
+.drop_box_box
+{
+    border: 2px solid rgba(43, 43, 43, 0.4);
+    border-radius: 10px;
+}
+
+.drop_box_head
+{
+    border-bottom: 2px dotted rgba(43, 43, 43, 0.4);
+}
+
+.drop_box_body
+{
+    text-align: center;
+    
+}
+
+.drop_box_body img
+{
+    max-width: 35%;
+    height: auto;
+    border-radius: 150px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.video-btn
+{
+    background-color: transparent;
+    width: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    margin-bottom: 3%;
+}
+
+.vid_btn
+{
+    flex: 1 0 10%;
+    width: 90%;
+    color: white;
+    text-decoration: none;
+    background-color: #3a3939;
+    transition: 0.4s;
+    border: 1px solid #b3b1b1;
+    border-radius: 10px;
+    margin-right: 20%;
+    padding: 8%;
+}
+.vid_btn a
+{
+    text-decoration: none;
+    color: white;
+}
+.vid_btn:hover
+{
+    background-color: #5c5b5b;
+    transition: 0.4s;
+}
+
+
+@media screen and (max-width: 540px) {
+    .wrapper .video-controls{
+      padding: 3px 10px 7px;
+    }
+    .options input, .progress-area span{
+      display: none!important;
+    }
+    .options button{
+      height: 30px;
+      width: 30px;
+      font-size: 17px;
+    }
+    .options .video-timer{
+      margin-left: 5px;
+    }
+    .video-timer .separator{
+      font-size: 14px;
+      margin: 0 2px;
+    }
+    .options button :where(i, span) {
+      line-height: 30px;
+    }
+    .options button span{
+      font-size: 21px;
+    }
+    .options .video-timer, .progress-area span, .speed-options li{
+      font-size: 12px;
+    }
+    .playback-content .speed-options{
+      width: 75px;
+      left: -30px;
+      bottom: 30px;
+    }
+    .speed-options li{
+      margin: 1px 0;
+      padding: 3px 0 3px 10px;
+    }
+    .right .pic-in-pic{
+      display: none;
+    }
+  }
+  
+  .drop-section{
+      min-height: 70%;
+      border: 1px dashed rgba(43, 43, 43, 0.6);
+      background-image: linear-gradient(180deg,rgba(83, 83, 83, 0.5),rgba(43, 43, 43, 0.5));
+      margin: 2%;
+      border-radius: 15px;
+      position: relative;
+  }
+  .drop-section div.col:first-child{
+      opacity: 1;
+      visibility: visible;
+      transition-duration: 0.2s;
+      transform: scale(1);
+      width: 90%;
+      margin: auto;
+  }
+  .drop-section div.col:last-child{
+      font-size: 40px;
+      font-weight: 700;
+      color: #ffffff;
+      position: absolute;
+      top: 0px;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      margin: auto;
+      width: 90%;
+      height: auto;
+      pointer-events: none;
+      opacity: 0;
+      visibility: hidden;
+      transform: scale(0.6);
+      transition-duration: 0.2s;
+  }
+  /* we will use "drag-over-effect" class in js */
+  .drag-over-effect div.col:first-child{
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: scale(1.1);
+  }
+  .drag-over-effect div.col:last-child{
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1);
+  }
+  .drop-section .cloud-icon{
+      margin-top: 5%;
+      margin-bottom: 5%;
+  }
+  .drop-section span,
+  .drop-section button{
+      display: block;
+      margin: auto;
+      color: #ffffff;
+      margin-bottom: 5%;
+  }
+  .drop-section button{
+      color: #ffffff;
+      background-color: #313131;
+      border: none;
+      outline: none;
+      padding: 2% 5%;
+      border-radius: 10px;
+      margin-top: 5%;
+      cursor: pointer;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 5% 5% -2%, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  }
+  .drop-section input{
+      display: none;
+  }
+  
+  .list-section{
+      display: none;
+      text-align: left;
+      margin: 0px 5%;
+      padding-bottom: 5%;
+  }
+  .list-section .list-title{
+      font-size: 0.95rem;
+      color: #ffffff;
+  }
+  .list-section li{
+      display: flex;
+      margin: 4% 0px;
+      padding-top: 2%;
+      padding-bottom: 2%;
+      border-radius: 10px;
+      transition-duration: 0.2s;
+  }
+  .list-section li:hover{
+      box-shadow: #E3EAF9 0px 0px 2% 0px, #E3EAF9 0px 3% 4% 0px;
+  }
+  .list-section li .col{
+      flex: .1;
+  }
+  .list-section li .col:nth-child(1){
+      flex: .15;
+      text-align: center;
+  }
+  .list-section li .col:nth-child(2){
+      flex: .75;
+      text-align: left;
+      font-size: 0.9rem;
+      color: #ffffff;
+      padding: 4% 5%;
+  }
+  .list-section li .col:nth-child(2) div.name{
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      max-width: 95%;
+      display: inline-block;
+  }
+  .list-section li .col .file-name span{
+      color: #ffffff;
+      float: right;
+  }
+  .list-section li .file-progress{
+      width: 100%;
+      height: 2%;
+      margin-top: 2%;
+      border-radius: 10px;
+      background-color: #dee6fd;
+  }
+  .list-section li .file-progress span{
+      display: block;
+      width: 0%;
+      height: 100%;
+      border-radius: 10px;
+      background-image: linear-gradient(120deg, #6b99fd, #9385ff);
+      transition-duration: 0.4s;
+  }
+  .list-section li .col .file-size{
+      font-size: 0.75rem;
+      margin-top: 2%;
+      color: #ffffff;
+  }
+  
+  .list-section li .col svg.tick{
+      fill: #8694d2;
+      background-color: #dee6fd;
+      position: relative;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+  }
+  .list-section li .col svg.tick{
+      fill: #50a156;
+      background-color: transparent;
+  }
+  /* .list-section li.complete svg.cross{
+      display: none;
+  }
+  .list-section li.in-prog .file-size,
+  .list-section li.in-prog svg.tick{
+      display: none;
+  } */

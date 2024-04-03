@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>  
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'> 
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form id="loginForm" action="/login" method="POST"> <!-- Changed action to /login and method to POST -->
+        <lottie-player src="https://assets4.lottiefiles.com/datafiles/XRVoUu3IX4sGWtiC3MPpFnJvZNq7lVWDCa8LSqgS/profile.json"  background="transparent"  speed="1"  style="justify-content: center;" loop  autoplay></lottie-player>
+      <div class="input-container">
+        <input type="text" id="username" name="username" placeholder="Username" required> <!-- Added name attribute -->
+      </div>
+      <div class="input-container">
+        <input type="password" id="password" name="password" placeholder="Password" required> <!-- Added name attribute -->
+        <span class="show-hide" onclick="togglePasswordVisibility()"></span>
+      </div>
+      <button type="submit">Login</button> <!-- Changed type to "submit" -->
+      <div id="loginMessage" class="message"></div>
+    </form>
+  </div>
+
+  <script src="{{ url_for('static', filename='login.js') }}"></script>
+</body>
+</html>
